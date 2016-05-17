@@ -3,7 +3,7 @@
 //  paging
 //
 //  Created by realgreys on 2016. 5. 10..
-//  Copyright © 2016년 realgreys. All rights reserved.
+//  Copyright © 2016 realgreys. All rights reserved.
 //
 
 import UIKit

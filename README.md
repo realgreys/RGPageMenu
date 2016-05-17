@@ -9,7 +9,7 @@ iOS Page Menu which looks like in Android.
 
 A flexible paging menu controller build with UIPageViewController.
 
-![Preview](https://github.com/realgreys/xxx.gif)
+![Preview](https://github.com/realgreys/RGPageMenu/preview.gif)
 
 ## Example
 
@@ -17,7 +17,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-iOS 8.0
+iOS 8.0 or later
 
 ## Installation
 
@@ -30,7 +30,7 @@ pod "RGPageMenu"
 
 ## Author
 
-realgreys, realgreys@gmail.com
+realgreys
 
 ## License
 
