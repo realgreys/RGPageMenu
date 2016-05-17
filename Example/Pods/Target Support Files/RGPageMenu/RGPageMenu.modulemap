@@ -1,0 +1,6 @@
+framework module RGPageMenu {
+  umbrella header "RGPageMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

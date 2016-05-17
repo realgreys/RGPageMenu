@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RGPageMenu_Example' do
+  pod 'RGPageMenu', :path => '../'
+
+  target 'RGPageMenu_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

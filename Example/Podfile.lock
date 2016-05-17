@@ -1,0 +1,16 @@
+PODS:
+  - RGPageMenu (0.1.0)
+
+DEPENDENCIES:
+  - RGPageMenu (from `../`)
+
+EXTERNAL SOURCES:
+  RGPageMenu:
+    :path: ../
+
+SPEC CHECKSUMS:
+  RGPageMenu: 1361ad8156351ed70a99247f82737376a1dda3d5
+
+PODFILE CHECKSUM: acb3ce8d669550560ac9fc2ed97767a2310844a5
+
+COCOAPODS: 1.0.0
