@@ -27,8 +27,8 @@ public class RGPageMenuOptions {
                                                  verticalPadding: 0)
     
     public var defaultPage = 0
-    
     public var animationDuration: NSTimeInterval = 0.3
+    var menuItemCount: Int = 0
     
     
     public enum MenuPosition {
@@ -46,6 +46,7 @@ public class RGPageMenuOptions {
         case Left
         case Center
         case Right
+        case Fit
     }
     
     public init() {}

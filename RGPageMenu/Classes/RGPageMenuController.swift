@@ -53,6 +53,8 @@ public class RGPageMenuController: UIViewController {
     override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        let width = view.bounds.width
+        
         menuView.moveToMenu(currentPage, animated: false)
     }
     
@@ -145,7 +147,7 @@ public class RGPageMenuController: UIViewController {
     }
     
     private func validateDefaultPage() {
-        guard options.defaultPage >= 0 && options.defaultPage < viewControllers.count else {
+        guard options.defaultPage >= 0 && options.defaultPage < options.menuItemCount else {
             NSException(name: "PageMenuException", reason: "default page is not valid!", userInfo: nil).raise()
             return
         }
@@ -176,13 +178,15 @@ public class RGPageMenuController: UIViewController {
     // MARK: - public
     
     public func configure(viewControllers: [UIViewController], options: RGPageMenuOptions) {
-        guard viewControllers.count > 0 else {
+        let menuItemCount = viewControllers.count
+        guard menuItemCount > 0 else {
             NSException(name: "PageMenuException", reason: "child view controller is empty!", userInfo: nil).raise()
             return
         }
         
         self.viewControllers = viewControllers
         self.options = options
+        self.options.menuItemCount = menuItemCount
         
         validateDefaultPage()
         currentPage = options.defaultPage
@@ -194,7 +198,7 @@ public class RGPageMenuController: UIViewController {
     }
     
     public func moveToPage(page: Int, animated: Bool = true) {
-        guard page < viewControllers.count && page != currentPage else { return }
+        guard page < options.menuItemCount && page != currentPage else { return }
         
         let direction: UIPageViewControllerNavigationDirection = page < currentPage ? .Reverse : .Forward
         

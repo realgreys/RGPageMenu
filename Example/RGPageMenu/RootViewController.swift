@@ -39,6 +39,7 @@ class RootViewController: UIViewController {
         
         let viewControllers = [timeTableViewController!, vc0, vc1, vc2, vc3, vc4, vc5]
         let options = RGPageMenuOptions()
+//        options.menuAlign = .Fit
 //        options.menuPosition = .Bottom
         
         if let pageMenuController = childViewControllers.first as? RGPageMenuController {

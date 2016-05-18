@@ -36,6 +36,7 @@ class MenuView: UIScrollView {
             case .Left: return 0
             case .Center: return offset / 2
             case .Right: return offset
+            case .Fit: return 0
             }
         }
         
@@ -100,12 +101,6 @@ class MenuView: UIScrollView {
             
             menuItemViews.append(menuItemView)
         }
-//        for i in 0..<titles.count {
-//            let menuItemView = MenuItemView(title: titles[i], options: options)
-//            contentView.addSubview(menuItemView)
-//            
-//            menuItemViews.append(menuItemView)
-//        }
     }
     
     private func layoutMenuItemView() {
@@ -141,6 +136,10 @@ class MenuView: UIScrollView {
         setNeedsLayout()
         layoutIfNeeded()
     }
+    
+//    private func relayoutMenuItemView() {
+//        layoutMenuItemView()
+//    }
     
     private func setupUnderlineViewIfNeeded() {
         guard case let .Underline(height, color, horizontalPadding, verticalPadding) = options.menuStyle else {

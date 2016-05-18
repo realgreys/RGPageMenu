@@ -27,6 +27,7 @@ class MenuItemView: UIView {
                                                            attributes: [NSFontAttributeName: titleLabel.font],
                                                            context: nil).size
     }
+    private var widthConstraint: NSLayoutConstraint!
     
     var selected: Bool = false {
         didSet {
@@ -79,14 +80,23 @@ class MenuItemView: UIView {
         NSLayoutConstraint.activateConstraints(horizontalConstraints + verticalConstraints)
         
         let labelSize = calcLabelSize()
-        let widthConstraint = NSLayoutConstraint(item: titleLabel, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .Width, multiplier: 1.0, constant: labelSize.width)
+        widthConstraint = NSLayoutConstraint(item: titleLabel, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .Width, multiplier: 1.0, constant: labelSize.width)
         widthConstraint.active = true
     }
     
     private func calcLabelSize() -> CGSize {
-        let width = ceil(labelSize.width)
+        
         let height = floor(labelSize.height) // why floor?
-        return CGSizeMake(width + options.menuItemMargin * 2, height)
+        
+        if options.menuAlign == .Fit {
+            let windowSize = UIApplication.sharedApplication().keyWindow!.bounds.size
+            let width = windowSize.width / CGFloat(options.menuItemCount)
+            return CGSizeMake(width, height)
+        } else {
+            let width = ceil(labelSize.width)
+            
+            return CGSizeMake(width + options.menuItemMargin * 2, height)
+        }
     }
     
 }
