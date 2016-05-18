@@ -53,8 +53,6 @@ public class RGPageMenuController: UIViewController {
     override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        let width = view.bounds.width
-        
         menuView.moveToMenu(currentPage, animated: false)
     }
     
